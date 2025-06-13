@@ -1,0 +1,85 @@
+
+//****IN THE NAME OF ALLAH****
+//****SAYED MOHAIMINUL HAQUE****
+#pragma GCC optimize("Ofast")
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+#define ld long double
+#define nl "\n"
+#define mod 1000000009
+//gcd(m,n)= __gcd(m,n);
+
+const int mx = 1e6 +5;
+int c;
+
+bool isPrime[mx];
+
+void Sieve()
+{
+    isPrime[2]=1;
+    for(int i=3; i<mx; i+=2)
+    {
+        isPrime[i]=1;
+
+    }
+    for(int i=3; i*i<=mx; i++)
+    {
+        if(isPrime[i])
+        {
+            for(int j=i*i; j<mx; j+=i+i)
+            {
+                isPrime[j]=0;
+            }
+        }
+    }
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+
+    ll tc=1;
+    cin>>tc;
+    for(ll test=0; test<tc; test++)
+    {
+        ll n;
+        cin>>n;
+        ll ans=0;
+        ll t=1;
+        for(ll i=n; i>=2; i--)
+        {
+            if(isPrime[i]==1)
+            {
+                ans++;
+                n=n-i;
+                break;
+            }
+        }
+
+        while(n>0)
+        {
+            n=n-t;
+            t=t*2;
+            ans++;
+            cout<<"x";
+        }
+
+        if(n==0)
+        {
+            cout<<ans<<nl;
+        }
+        else
+        {
+            cout<<-1<<nl;
+        }
+
+    }
+
+
+    return 0;
+}

@@ -1,0 +1,62 @@
+
+
+//****SHEIKH HASINA UNIVERSITY****
+//****SAYED MOHAIMINUL HAQUE****
+#pragma GCC optimize("Ofast")
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+#define ld long double
+#define nl "\n"
+#define mod 1000000009
+//gcd(m,n)= __gcd(m,n);
+
+int main()
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+
+    ll tc=1;
+    //cin>>tc;
+    for(ll test=0; test<tc; test++)
+    {
+        string s,t;
+        cin>>s;
+        for(ll i=0; i<100005; i++)
+        {
+            t.push_back('o');
+            t.push_back('x');
+            t.push_back('x');
+        }
+        ll k,m=0;
+        if(s[0]==t[0]) k=0;
+        else if(s[0]==t[1] && s[1]==t[2]) k=1;
+        else if(s[0]==t[2] && s[1]==t[3]) k=2;
+        else k=-1;
+        if(k==-1) cout<<"NO\n";
+        else
+        {
+            for(ll i=0,j=k; i<s.size(); i++,j++)
+            {
+                if(s[i]!=t[j])
+                {
+
+
+                    m=1;
+                    break;
+                }
+            }
+            if(m==1) cout<< "NO\n";
+            else cout<<"YES\n";
+        }
+    }
+
+
+
+
+
+    return 0;
+}

@@ -1,0 +1,64 @@
+
+//****IN THE NAME OF ALLAH****
+//****SAYED MOHAIMINUL HAQUE****
+#pragma GCC optimize("Ofast")
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+#define ld long double
+#define nl "\n"
+#define md 1000000007
+#define mem(a,b) memset(a, b, sizeof(a) )
+#define gcd(a,b) __gcd(a,b)
+#define lcm(a,b) (a*(b/(__gcd(a,b))))
+
+long long modular(long long base, long long exp, int mod) {
+   long long res = 1;
+   while (exp > 0) {
+      if (exp % 2 == 1)
+         res= (res * base) % mod;
+      exp = exp >> 1;
+      base = (base * base) % mod;
+   }
+   return res;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    ll tc=1;
+    cin>>tc;
+    for(ll test=0; test<tc; test++)
+    {
+
+        ll a,a1,b,b1;
+        cin>>a>>a1>>b>>b1;
+        ll sum1=0,sum2=0,sum3=0,sum4=0;
+
+       
+            sum1=((sum1%md)+(modular(2,a1+1,md)-1)%md)%md;
+            sum3=((sum3%md)+(modular(2,a+1,md)-1)%md)%md;
+            
+            ll sum5=((sum1%md)-(sum3%md)+md)%md;
+        
+            sum2=((sum2%md)+(modular(3,b1+1,md)/2)%md)%md;
+            sum4=((sum4%md)+(modular(3,b4+1,md)/2)%md)%md;
+            
+            ll sum6=((sum2%md)-(sum4%md)+md)%md;
+            
+    
+
+        ll sum=((sum1%md)*(sum2%md))%md;
+        cout<<sum<<nl;
+
+
+
+    }
+
+
+    return 0;
+}

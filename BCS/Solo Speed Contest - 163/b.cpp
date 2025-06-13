@@ -1,0 +1,45 @@
+
+
+//****SHEIKH HASINA UNIVERSITY****
+//****SAYED MOHAIMINUL HAQUE****
+#pragma GCC optimize("Ofast")
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+#define ld long double
+#define nl "\n"
+#define mod 1000000009
+//gcd(m,n)= __gcd(m,n);
+
+int main()
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+
+    ll tc=1;
+    cin>>tc;
+    for(ll test=0; test<tc; test++)
+    {
+        ll n,m=100;
+        cin>>n;
+       set<string>s[25];
+       for(ll i=0; i<n; i++)
+       {
+           string t;
+           cin>>t;
+           if(m>=t.size())
+           {
+               m=t.size();
+               s[m].insert(t);
+           }
+
+       }
+       cout<<*s[m].begin()<<nl;
+    }
+
+
+    return 0;
+}
